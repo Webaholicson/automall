@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%= render 'partial/head' %>
+  <body class="body">
+    <header id="main-header">
+      <%= render 'partial/header' %>
+    </header>
+
+    <nav id="nav">
+      <%= render 'partial/navigation' %>
+    </nav>
+
+    <% if is_home? %>
+    <section id="banner">
+
+    </section>
+    <% end %>
+
+    <section id="flash-messages">
+      <%= render 'partial/messages' %>
+    </section>
+
+    <main id="main-content">
+      <div class="perimiter">
+      <%= yield %>
+      </div>
+    </main>
+
+    <footer id="main-footer">
+      <%= render 'partial/footer' %>
+    </footer>
+  </body>
+</html>

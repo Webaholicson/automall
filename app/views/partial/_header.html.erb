@@ -1,0 +1,12 @@
+<div class="row perimiter" id="header-container">
+  <div class="small-2 columns" id="logo">
+    <%= link_to(image_tag("logo.jpg"), root_url) %>
+  </div>
+  <div class="small-7 columns text-left">
+    <h3><%= t :online_automall %></h3>
+    <span><%= t :slogan %></span>
+  </div>
+  <div class="small-3 columns">
+    <%= render 'partial/toplinks' %>
+  </div>
+</div>

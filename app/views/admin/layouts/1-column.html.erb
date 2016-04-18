@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%= render 'admin/partial/head' %>
+  <body class="<%= @body_class %>">
+    <% if is_user_logged_in? %>
+    <header id="main-header">
+      <%= render 'admin/partial/header' %>
+    </header>
+
+    <nav id="nav">
+
+    </nav>
+    <% end %>
+
+    <section id="flash-messages">
+      <%= render 'admin/partial/messages' %>
+    </section>
+
+    <main id="main-content">
+      <div class="perimiter">
+        <%= yield %>
+      </div>
+    </main>
+
+    <footer id="main-footer">
+      <%= render 'admin/partial/footer' %>
+    </footer>
+  </body>
+</html>

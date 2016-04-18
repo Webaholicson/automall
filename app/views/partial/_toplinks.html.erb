@@ -1,0 +1,19 @@
+<nav id="top-links">
+  <ul class="menu">
+    <% if !is_user_logged_in? %>
+    <li>
+      <%= link_to t(:login), { controller: 'account',
+        action: 'login' }, class: 'button' %>
+    </li>
+    <% else %>
+    <li>
+      <%= link_to t(:logout), { controller: 'account',
+        action: 'logout' }, class: 'button' %>
+    </li>
+    <% end %>
+    <li>
+      <%= link_to t(:my_account), { controller: 'account',
+        action: 'dashboard' }, class: 'button' %>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,25 @@
+<nav id="footer-nav">
+  <ul class="menu">
+    <li>
+      <%= link_to t(:buy), { controller: 'account', action: 'login' } %>
+      <span>&bull;</span>
+    </li>
+    <li>
+      <%= link_to t(:sell_and_trade), { controller: 'account', action: 'login' } %>
+      <span>&bull;</span>
+    </li>
+    <li>
+      <%= link_to t(:service_and_repair), { controller: 'account', action: 'login' } %>
+      <span>&bull;</span>
+    </li>
+    <li>
+      <%= link_to t(:login), { controller: 'account', action: 'login' } %>
+      <span>&bull;</span>
+    </li>
+    <li>
+      <%= link_to t(:my_account), { controller: 'account', action: 'login' } %>
+    </li>
+  </ul>
+</nav>
+<%= content_tag :div, get_copyright_message,
+  id: 'copyright', class: 'text-center' %>

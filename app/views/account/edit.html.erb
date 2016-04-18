@@ -1,0 +1,23 @@
+<h3><%= t :my_profile %></h3>
+<%= form_tag({controller: 'account', action: 'save'},
+  id: 'registration-form') do %>
+  <div class="input-text">
+    <%= label_tag :first_name, t(:first_name) %>
+  </div>
+  <%= text_field_tag 'user[first_name]', @user.first_name, id: 'first_name' %>
+  <div class="input-text">
+    <%= label_tag(:last_name, t(:last_name)) %>
+    <%= text_field_tag 'user[last_name]', @user.last_name, id: 'last_name' %>
+  </div>
+  <div class="input-text">
+    <%= label_tag(:email, t(:email)) %>
+    <%= text_field_tag 'user[email]', @user.email, disabled: true, id: 'email' %>
+  </div>
+  <div class="input-text">
+    <%= label_tag(:password, t(:password)) %>
+    <%= password_field_tag 'user[password]', '', id: 'password' %>
+  </div>
+  <div class="submit-button">
+    <%= submit_tag t(:save), class: 'button' %>
+  </div>
+<% end %>

@@ -1,0 +1,47 @@
+// Place all the styles related to the page controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.perimiter { width: 980px; margin: 0 auto; }
+
+#logo a { display: block; }
+#logo a img { width: 170px }
+#top-links { margin-top: auto;}
+#top-links .menu li a { margin-right: 5px; }
+
+// Header
+#banner {
+  height: 300px;
+  background: url('images/car-banner-bg.png') bottom center no-repeat;
+  box-shadow: 0 0 6px 3px #ccccff;
+}
+
+// Content
+#main-content { margin-top: 20px; }
+
+#flash-messages { margin-top: 20px; }
+
+// Main Navigation
+#nav { margin: 20px 0 0; }
+#nav .menu li a { margin-right: 5px; }
+#top-links .menu li a { border-radius: 0 0 10px 10px; }
+
+// Left Sidebar
+#left-nav ul li { margin-bottom: 5px; }
+
+// Footer
+#main-footer {
+  margin: 25px 0 0;
+  background-color: #990000;
+  color: #FFF;
+  padding: 50px 0px;
+}
+#copyright { margin-top: 10px;}
+#footer-nav .menu { width: 545px; margin: 0 auto; }
+#footer-nav .menu li a { color: #FFF; float: left}
+#footer-nav .menu li span {
+  float: right;
+  padding: 0.7rem 0;
+  display: block;
+  line-height: 1;
+}

@@ -1,0 +1,112 @@
+<section class="row" id="sell-your-car">
+  <div class="medium-12 columns" id="sell-car-intro">
+    <%= content_tag :h4, t(:sell_header) %>
+    <%= content_tag :p, t(:sell_text_quote) %>
+  </div>
+
+  <div class="medium-12 columns" id="sell-car-form-container">
+  <%= form_tag({ controller: 'listing', action: 'save' },
+    id: 'sell-car-form') do %>
+    <ul class="tabs" data-tabs id="sell-vehicle-tabs">
+        <li class="tabs-title is-active">
+          <%= link_to t(:contact_details), '#step1',
+            :aria => { :selected => true } %>
+        </li>
+        <li class="tabs-title">
+          <%= link_to t(:vehicle_details), '#step2',
+            :aria => { :selected => true } %>
+        </li>
+        <li class="tabs-title">
+          <%= link_to t(:additional_details), '#step3',
+            :aria => { :selected => true } %>
+        </li>
+        <li class="tabs-title">
+          <%= link_to t(:vehicle_images), '#step4',
+            :aria => { :selected => true } %>
+        </li>
+        <li class="tabs-title">
+          <%= link_to t(:review_listing), '#step5',
+            :aria => { :selected => true } %>
+        </li>
+    </ul>
+
+    <div class="tab-content" data-tabs-content="sell-vehicle-tabs">
+      <div class="row tabs-panel is-active" id="step1">
+        <p><em class="required">*</em> Required fields</p>
+        <div class="medium-6 columns">
+          <%= label_tag :name, t(:name) %>
+          <%= text_field_tag 'listing[name]', '', id: 'name' %>
+
+          <%= label_tag :street_1, t(:street_1) %>
+          <%= text_field_tag 'listing[street][1]', '', id: 'street_1' %>
+
+          <%= label_tag :street_2, t(:street_2) %>
+          <%= text_field_tag 'listing[street][2]', '', id: 'street_2' %>
+
+          <%= label_tag :city, t(:city) %>
+          <%= text_field_tag 'listing[city]', '', id: 'city' %>
+        </div>
+        <div class="medium-6 columns">
+          <%= label_tag :state, t(:state) %>
+          <%= text_field_tag 'listing[state]', '', id: 'state' %>
+
+          <%= label_tag :zipcode, t(:zipcode) %>
+          <%= text_field_tag 'listing[zipcode]', '', id: 'zipcode' %>
+
+          <%= label_tag :country, t(:country) %>
+          <%= text_field_tag 'listing[country]', '', id: 'country' %>
+
+          <%= label_tag :phone, t(:phone) %>
+          <%= text_field_tag 'listing[phone]', '', id: 'phone' %>
+        </div>
+        <div class="medium-12 columns">
+          <%= link_to t(:save_contact_details), '#',
+            id: 'save-contact-details', class: 'button' %>
+        </div>
+      </div>
+
+      <div class="row tabs-panel" id="step2">
+        <div class="medium-4 columns">
+          <%= label_tag :vin_number, t(:vin_number) %>
+          <%= text_field_tag 'listing[vin_number]', '', id: 'vin_number' %>
+
+          <%= label_tag :make, t(:make) %>
+          <%= text_field_tag 'listing[make]', '', id: 'make' %>
+
+          <%= label_tag :model, t(:model) %>
+          <%= text_field_tag 'listing[model]', '', id: 'model' %>
+        </div>
+        <div class="medium-4 columns">
+          <%= label_tag :year, t(:year) %>
+          <%= text_field_tag 'listing[year]', '', id: 'year' %>
+
+          <%= label_tag :mileage, t(:mileage) %>
+          <%= text_field_tag 'listing[mileage]', '', id: 'mileage' %>
+
+          <%= label_tag :stock_type, t(:stock_type) %>
+          <%= text_field_tag 'listing[stock_type]', '', id: 'stock_type' %>
+        </div>
+        <div class="medium-4 columns">
+          <%= label_tag :fuel_type, t(:fuel_type) %>
+          <%= text_field_tag 'listing[fuel_type]', '', id: 'fuel_type' %>
+
+          <%= label_tag :exterior_color, t(:exterior_color) %>
+          <%= text_field_tag 'listing[exterior_color]', '', id: 'exterior_color' %>
+
+          <%= label_tag :interior_color, t(:interior_color) %>
+          <%= text_field_tag 'listing[interior_color]', '', id: 'interior_color' %>
+        </div>
+      </div>
+
+      <div class="row tabs-panel" id="step3">
+      </div>
+
+      <div class="row tabs-panel" id="step4">
+      </div>
+
+      <div class="row tabs-panel" id="step5">
+      </div>
+    </div>
+  <% end %>
+  </div>
+</section>

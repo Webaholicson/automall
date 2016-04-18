@@ -1,0 +1,7 @@
+<% if @messages %>
+<div id="flash-messages" class="perimiter">
+  <% @messages.each do |name, msg| -%>
+  <%= content_tag :p, msg, class: name + ' callout' %>
+  <% end -%>
+</div>
+<% end %>

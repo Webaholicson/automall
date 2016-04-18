@@ -1,0 +1,13 @@
+// Place all the styles related to the admin index controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Admin login
+#admin-login-container,
+#forgot-password-container,
+#change-password-container {
+  margin: 20px auto;
+  padding: 1em;
+  border: 1px solid #999999;
+  background: #d9d9d9;
+}

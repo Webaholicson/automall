@@ -1,0 +1,20 @@
+<nav id="left-nav">
+  <ul class="menu vertical">
+    <li>
+      <%= link_to t(:dashboard), { controller: 'account', action: 'dashboard' },
+        class: 'button' %>
+    </li>
+    <li>
+      <%= link_to t(:profile), { controller: 'account', action: 'edit' },
+        class: 'button' %>
+    </li>
+    <li>
+      <%= link_to t(:my_listings), { controller: 'listing', action: 'list' },
+        class: 'button' %>
+    </li>
+    <li>
+      <%= link_to t(:saved_listings), { controller: 'listing', action: 'saved' },
+        class: 'button' %>
+    </li>
+  </ul>
+</nav>

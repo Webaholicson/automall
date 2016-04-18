@@ -1,0 +1,12 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title><%= content_for?(:title) ? yield(:title) : t(:title) %></title>
+
+  <%= stylesheet_link_tag  "admin/application" %>
+  <%= javascript_include_tag "admin/application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>

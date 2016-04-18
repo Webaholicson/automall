@@ -1,0 +1,28 @@
+<div id="register-account-container">
+  <%= form_tag({controller: 'account', action: 'register_post'},
+    id: 'registration-form') do %>
+    <div class="input-text">
+      <%= label_tag :first_name, t(:first_name) %>
+      <%= text_field_tag :first_name %>
+    </div>
+    <div class="input-text">
+      <%= label_tag(:last_name, t(:last_name)) %>
+      <%= text_field_tag :last_name %>
+    </div>
+    <div class="input-text">
+      <%= label_tag(:email, t(:email)) %>
+      <%= text_field_tag :email %>
+    </div>
+    <div class="input-text">
+      <%= label_tag(:email_confirmation, t(:email_confirmation)) %>
+      <%= text_field_tag :email_confirmation %>
+    </div>
+    <div class="input-text">
+      <%= label_tag(:password, t(:password)) %>
+      <%= password_field_tag :password %>
+    </div>
+    <div class="submit-button">
+      <%= submit_tag t(:register), class: 'button' %>
+    </div>
+  <% end %>
+</div>

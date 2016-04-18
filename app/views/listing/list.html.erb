@@ -1,0 +1,16 @@
+<h3>Find New &amp; Used Cars</h3>
+<p>We take the hassle out of car shopping</p>
+
+<section>
+  <div class="row">
+    <%= render 'listing/search' %>
+  </div>
+</section>
+
+<% if @filters %>
+<section>
+  <div class="results">
+    <%= content_tag :h3, :listing_result_msg %>
+  </div>
+</section>
+<% end %>
