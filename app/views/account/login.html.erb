@@ -1,26 +1,38 @@
-<section class="row">
+<section class="row small-collapse">
   <div class="medium-6 columns" id="login-container">
-    <h5><%= t :login_title %></h5>
-    <%= form_tag({controller: 'account', action: 'login_post'},
-      id: 'login-form', method: "post") do %>
-      <div class="input-text">
-        <%= label_tag(:email, t(:email)) %>
-        <%= text_field_tag(:email) %>
-      </div>
-      <div class="input-text">
-        <%= label_tag(:password, t(:password)) %>
-        <%= password_field_tag(:password) %>
-      </div>
-      <div class="checkbox">
-        <%= check_box_tag(:remember_me) %>
-        <%= label_tag(:remember_me, t(:remember_me)) %>
-      </div>
-      <%= submit_tag(t(:login), class: 'button') %>
-    <% end %>
+    <div class="row small-uncollapse medium-collapse">
+      <%= content_tag :h5, t(:login), class: 'medium-11 small-12 columns' %>
+    </div>
+    <div class="row">
+      <%= form_tag({controller: 'account', action: 'login_post'},
+        id: 'login-form', method: "post", class: "medium-11 small-12 columns") do %>
+        <%= content_tag :p, t(:login_title) %>
+        <div class="input-text">
+          <%= label_tag(:email, t(:email)) %>
+          <%= text_field_tag(:email) %>
+        </div>
+        <div class="input-text">
+          <%= label_tag(:password, t(:password)) %>
+          <%= password_field_tag(:password) %>
+        </div>
+        <div class="checkbox">
+          <%= check_box_tag(:remember_me) %>
+          <%= label_tag(:remember_me, t(:remember_me)) %>
+        </div>
+        <%= submit_tag(t(:login), class: 'button') %>
+      <% end %>
+    </div>
   </div>
 
   <div class="medium-6 columns" id="register-container">
-    <h5><%= t :no_account_register_title %></h5>
-    <%= link_to t(:register), { controller: 'account', action: 'register' }, class: 'button' %>
+    <div class="row medium-collapse">
+      <%= content_tag :h5, t(:register), class: 'small-12 columns medium-offset-1' %>
+    </div>
+    <div class="row">
+      <div class="medium-12 columns">
+        <%= content_tag :p, t(:no_account_register_title) %>
+        <%= link_to t(:register), { controller: 'account', action: 'register' }, class: 'button' %>
+      </div>
+    </div>
   </div>
 </section

@@ -19,3 +19,4 @@
 /* Global Styles */
 body { font-family: 'Droid Sans', sans-serif; }
 em.required { color: red; }
+#wrapper { padding: 0 20px; }

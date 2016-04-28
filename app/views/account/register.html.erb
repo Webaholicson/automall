@@ -1,6 +1,6 @@
-<div id="register-account-container">
+<div id="register-account-container" class="row">
   <%= form_tag({controller: 'account', action: 'register_post'},
-    id: 'registration-form') do %>
+    id: 'registration-form', class: 'small-12 columns') do %>
     <div class="input-text">
       <%= label_tag :first_name, t(:first_name) %>
       <%= text_field_tag :first_name %>

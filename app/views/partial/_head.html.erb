@@ -4,7 +4,9 @@
 
   <title><%= content_for?(:title) ? yield(:title) : t(:title) %></title>
 
+
   <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js" %>
   <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 

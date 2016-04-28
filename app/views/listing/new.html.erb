@@ -1,4 +1,4 @@
-<section class="row" id="sell-your-car">
+<section class="row" id="sell-your-car" ng-controller="ListingCtrl">
   <div class="medium-12 columns" id="sell-car-intro">
     <%= content_tag :h4, t(:sell_header) %>
     <%= content_tag :p, t(:sell_text_quote) %>
@@ -9,24 +9,19 @@
     id: 'sell-car-form') do %>
     <ul class="tabs" data-tabs id="sell-vehicle-tabs">
         <li class="tabs-title is-active">
-          <%= link_to t(:contact_details), '#step1',
-            :aria => { :selected => true } %>
+          <%= link_to t(:contact_details), '#step1' %>
         </li>
         <li class="tabs-title">
-          <%= link_to t(:vehicle_details), '#step2',
-            :aria => { :selected => true } %>
+          <%= link_to t(:vehicle_details), '#step2' %>
         </li>
         <li class="tabs-title">
-          <%= link_to t(:additional_details), '#step3',
-            :aria => { :selected => true } %>
+          <%= link_to t(:additional_details), '#step3'%>
         </li>
         <li class="tabs-title">
-          <%= link_to t(:vehicle_images), '#step4',
-            :aria => { :selected => true } %>
+          <%= link_to t(:vehicle_images), '#step4' %>
         </li>
         <li class="tabs-title">
-          <%= link_to t(:review_listing), '#step5',
-            :aria => { :selected => true } %>
+          <%= link_to t(:review_listing), '#step5' %>
         </li>
     </ul>
 
@@ -35,33 +30,43 @@
         <p><em class="required">*</em> Required fields</p>
         <div class="medium-6 columns">
           <%= label_tag :name, t(:name) %>
-          <%= text_field_tag 'listing[name]', '', id: 'name' %>
+          <%= text_field_tag 'listing[name]', '',
+            id: 'name', "ng-model" => 'fields.name' %>
 
           <%= label_tag :street_1, t(:street_1) %>
-          <%= text_field_tag 'listing[street][1]', '', id: 'street_1' %>
+          <%= text_field_tag 'listing[street][1]', '',
+            "ng-model" => 'fields.street_1', id: 'street_1' %>
 
           <%= label_tag :street_2, t(:street_2) %>
-          <%= text_field_tag 'listing[street][2]', '', id: 'street_2' %>
+          <%= text_field_tag 'listing[street][2]', '',
+            "ng-model" => 'fields.street_2', id: 'street_2' %>
 
           <%= label_tag :city, t(:city) %>
-          <%= text_field_tag 'listing[city]', '', id: 'city' %>
+          <%= text_field_tag 'listing[city]', '',
+            "ng-model" => 'fields.city', id: 'city' %>
         </div>
+
         <div class="medium-6 columns">
           <%= label_tag :state, t(:state) %>
-          <%= text_field_tag 'listing[state]', '', id: 'state' %>
+          <%= text_field_tag 'listing[state]', '',
+            "ng-model" => 'fields.state', id: 'state' %>
 
           <%= label_tag :zipcode, t(:zipcode) %>
-          <%= text_field_tag 'listing[zipcode]', '', id: 'zipcode' %>
+          <%= text_field_tag 'listing[zipcode]', '',
+            "ng-model" => 'fields.zipcode', id: 'zipcode' %>
 
           <%= label_tag :country, t(:country) %>
-          <%= text_field_tag 'listing[country]', '', id: 'country' %>
+          <%= text_field_tag 'listing[country]', '',
+            "ng-model" => 'fields.country', id: 'country' %>
 
           <%= label_tag :phone, t(:phone) %>
-          <%= text_field_tag 'listing[phone]', '', id: 'phone' %>
+          <%= text_field_tag 'listing[phone]', '',
+            "ng-model" => 'fields.phone', id: 'phone' %>
         </div>
         <div class="medium-12 columns">
-          <%= link_to t(:save_contact_details), '#',
-            id: 'save-contact-details', class: 'button' %>
+          <%= link_to t(:save_and_continue), '#',
+            id: 'save-contact-details', class: 'button',
+            "ng-click" => 'saveListing($event)' %>
         </div>
       </div>
 
@@ -96,12 +101,39 @@
           <%= label_tag :interior_color, t(:interior_color) %>
           <%= text_field_tag 'listing[interior_color]', '', id: 'interior_color' %>
         </div>
+        <div class="medium-12 columns">
+          <%= link_to t(:save_and_continue), '#',
+            id: 'save-contact-details', class: 'button' %>
+        </div>
       </div>
 
       <div class="row tabs-panel" id="step3">
+        <div class="medium-6 columns">
+          <%= label_tag :description, t(:description) %>
+          <%= text_area 'listing[description]', '', id: 'description' %>
+        </div>
       </div>
 
       <div class="row tabs-panel" id="step4">
+        <div class="medium-3 columns">
+          <%= label_tag :add_image, t(:add_image) %>
+          <%= file_field_tag 'listing[images][]' %>
+        </div>
+
+        <div class="medium-3 columns">
+          <%= label_tag :add_image, t(:add_image) %>
+          <%= file_field_tag 'listing[images][]' %>
+        </div>
+
+        <div class="medium-3 columns">
+          <%= label_tag :add_image, t(:add_image) %>
+          <%= file_field_tag 'listing[images][]' %>
+        </div>
+
+        <div class="medium-3 columns">
+          <%= label_tag :add_image, t(:add_image) %>
+          <%= file_field_tag 'listing[images][]' %>
+        </div>
       </div>
 
       <div class="row tabs-panel" id="step5">

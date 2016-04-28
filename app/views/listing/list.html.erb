@@ -1,16 +1,22 @@
-<h3>Find New &amp; Used Cars</h3>
-<p>We take the hassle out of car shopping</p>
-
-<section>
-  <div class="row">
-    <%= render 'listing/search' %>
+<section class="row">
+  <div class="small-12 columns">
+    <h3>Find New &amp; Used Cars</h3>
+    <p>We take the hassle out of car shopping</p>
   </div>
 </section>
 
+
+<section class="row">
+  <%= render 'listing/search' %>
+</section>
+
 <% if @filters %>
-<section>
-  <div class="results">
-    <%= content_tag :h3, :listing_result_msg %>
+<section class="row">
+  <div class="small-12 columns">
+    <%= content_tag :h3, I18n.t(:listing_result_msg) %>
+  </div>
+  <div class="small-12 columns">
+    <%= render 'listing/results' %>
   </div>
 </section>
 <% end %>

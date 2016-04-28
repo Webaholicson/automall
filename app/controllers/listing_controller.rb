@@ -11,6 +11,9 @@ class ListingController < IndexController
   end
 
   def list
+    if request.post?
+      @filters = params[:listing]
+    end
   end
 
   def save

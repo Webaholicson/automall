@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'listing/new'
   get 'listing/saved'
   get 'listing/list'
+  post 'listing/list'
   post 'listing/save'
   get 'listing/delete'
   get 'listing/edit'
@@ -31,7 +32,7 @@ Rails.application.routes.draw do
   post 'account/register_post'
 
   namespace :admin do
-    resources :user, :listing, :admin_user
+    resources :listing, :admin_user
   end
 
   match ':controller(/:action(/:id))', controller: /admin\/[^\/]+/, action: /[^\/]+_post/, via: [:post]

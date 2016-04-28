@@ -1,0 +1,7 @@
+<% if @listings %>
+  <%- @listings.each do |listing| %>
+    <%= render 'listing/item' %>
+  <% end %>
+<% else %>
+  <%= content_tag :p, t(:no_listings_found) %>
+<% end %>

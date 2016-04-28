@@ -1,5 +1,5 @@
 <% if get_flash_messages %>
-<div id="flash-messages" class="perimiter">
+<div id="flash-messages" class="small-12 columns">
   <% get_flash_messages.each do |name, msg| -%>
   <%= content_tag :p, msg, class: name + ' callout' %>
   <% end -%>

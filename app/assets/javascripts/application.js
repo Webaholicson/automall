@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require bootstrap
 //= require_directory .
 
 $(function(){ $(document).foundation(); });

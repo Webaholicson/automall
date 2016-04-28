@@ -1,6 +1,6 @@
 
-<%= form_tag({ controller: 'listing', action: 'list', method: 'post' },
-  id: 'vehicle-search-form') do %>
+<%= form_tag({ controller: 'listing', action: 'list' }, method: 'post',
+  id: 'vehicle-search-form', class: 'small-12 columns') do %>
   <div class="row">
     <div class="medium-4">
 
@@ -19,12 +19,12 @@
 
     <div class="medium-2 columns">
       <%= label_tag :max_price, t(:max_price) %>
-      <%= text_field_tag 'max_price', '', id: 'max_price' %>
+      <%= text_field_tag 'listing[max_price]', '', id: 'max_price' %>
     </div>
 
     <div class="medium-2 columns">
       <%= label_tag :distance, t(:distance) %>
-      <%= text_field_tag 'distance', '', id: 'distance' %>
+      <%= text_field_tag 'listing[distance]', '', id: 'distance' %>
     </div>
 
     <div class="medium-2 columns">

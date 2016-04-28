@@ -93,6 +93,8 @@ en:
   vehicle_details: 'Vehicle Details'
   listing_result_msg: 'Here are the results based on your seach criteria.'
   search_btn: 'Search'
+  no_listings_found: 'There were no results matching your search criteria.'
+  save_and_continue: 'Save and Continue'
 
   # Pages
   page_not_found: 'Ooops... The page you are looking for

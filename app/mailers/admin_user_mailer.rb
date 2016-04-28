@@ -12,6 +12,8 @@ class AdminUserMailer < ApplicationMailer
       controller: 'admin/index', action: 'change_password',
       only_path: false, approval_code: approval_code)
 
-    mail(to: email, subject: 'Reset you password')
+    mail(to: email, subject: 'Reset you password') do |format|
+      format.html { render 'admin/user_mailer' }
+    end
   end
 end
