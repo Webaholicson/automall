@@ -1,144 +1,164 @@
 <section class="row" id="sell-your-car" ng-controller="ListingCtrl">
-  <div class="medium-12 columns" id="sell-car-intro">
-    <%= content_tag :h4, t(:sell_header) %>
+  <div class="medium-12 columns">
+    <%= content_tag :h3, t(:sell_header) %>
     <%= content_tag :p, t(:sell_text_quote) %>
+    <%= content_tag :p,
+      content_tag(:em, '* ', class: 'required')+t(:required_fields) %>
+    <hr />
   </div>
 
-  <div class="medium-12 columns" id="sell-car-form-container">
+  <div class="medium-12 columns">
   <%= form_tag({ controller: 'listing', action: 'save' },
-    id: 'sell-car-form') do %>
-    <ul class="tabs" data-tabs id="sell-vehicle-tabs">
-        <li class="tabs-title is-active">
-          <%= link_to t(:contact_details), '#step1' %>
-        </li>
-        <li class="tabs-title">
-          <%= link_to t(:vehicle_details), '#step2' %>
-        </li>
-        <li class="tabs-title">
-          <%= link_to t(:additional_details), '#step3'%>
-        </li>
-        <li class="tabs-title">
-          <%= link_to t(:vehicle_images), '#step4' %>
-        </li>
-        <li class="tabs-title">
-          <%= link_to t(:review_listing), '#step5' %>
-        </li>
-    </ul>
+    id: 'sell-car-form', name: 'ctrlForm') do %>
+    <div class="row tabs-panel is-active step" id="step1">
+      <div class="medium-12 columns">
+        <%= content_tag :h5, t(:contact_details), class: 'subheader ' %>
+      </div>
+      <div class="medium-6 columns">
+        <%= label_tag(:first_name,
+          t(:first_name) + content_tag(:em, ' *', class: 'required')) %>
+        <%= text_field_tag 'listing[first_name]', '', id: 'first_name',
+          'ng-model' => 'fields.name' %>
+        <%= content_tag :p, t(:field_is_required),
+          id: 'first_name-validation', class: 'help-text' %>
 
-    <div class="tab-content" data-tabs-content="sell-vehicle-tabs">
-      <div class="row tabs-panel is-active" id="step1">
-        <p><em class="required">*</em> Required fields</p>
-        <div class="medium-6 columns">
-          <%= label_tag :name, t(:name) %>
-          <%= text_field_tag 'listing[name]', '',
-            id: 'name', "ng-model" => 'fields.name' %>
+        <%= label_tag(:last_name,
+          t(:last_name) + content_tag(:em, ' *', class: 'required')) %>
+        <%= text_field_tag 'listing[last_name]', '', id: 'last_name',
+          'ng-model' => 'fields.last_name' %>
+        <%= content_tag :p, t(:field_is_required),
+          id: 'last_name-validation', class: 'help-text' %>
 
-          <%= label_tag :street_1, t(:street_1) %>
-          <%= text_field_tag 'listing[street][1]', '',
-            "ng-model" => 'fields.street_1', id: 'street_1' %>
+        <%= label_tag :street_1, t(:street_1) %>
+        <%= text_field_tag 'listing[street][1]', '',
+          'ng-model' => 'fields.street_1', id: 'street_1' %>
 
-          <%= label_tag :street_2, t(:street_2) %>
-          <%= text_field_tag 'listing[street][2]', '',
-            "ng-model" => 'fields.street_2', id: 'street_2' %>
-
-          <%= label_tag :city, t(:city) %>
-          <%= text_field_tag 'listing[city]', '',
-            "ng-model" => 'fields.city', id: 'city' %>
-        </div>
-
-        <div class="medium-6 columns">
-          <%= label_tag :state, t(:state) %>
-          <%= text_field_tag 'listing[state]', '',
-            "ng-model" => 'fields.state', id: 'state' %>
-
-          <%= label_tag :zipcode, t(:zipcode) %>
-          <%= text_field_tag 'listing[zipcode]', '',
-            "ng-model" => 'fields.zipcode', id: 'zipcode' %>
-
-          <%= label_tag :country, t(:country) %>
-          <%= text_field_tag 'listing[country]', '',
-            "ng-model" => 'fields.country', id: 'country' %>
-
-          <%= label_tag :phone, t(:phone) %>
-          <%= text_field_tag 'listing[phone]', '',
-            "ng-model" => 'fields.phone', id: 'phone' %>
-        </div>
-        <div class="medium-12 columns">
-          <%= link_to t(:save_and_continue), '#',
-            id: 'save-contact-details', class: 'button',
-            "ng-click" => 'saveListing($event)' %>
-        </div>
+        <%= label_tag :street_2, t(:street_2) %>
+        <%= text_field_tag 'listing[street][2]', '',
+          'ng-model' => 'fields.street_2', id: 'street_2' %>
       </div>
 
-      <div class="row tabs-panel" id="step2">
-        <div class="medium-4 columns">
-          <%= label_tag :vin_number, t(:vin_number) %>
-          <%= text_field_tag 'listing[vin_number]', '', id: 'vin_number' %>
+      <div class="medium-6 columns">
+        <%= label_tag :city, t(:city) %>
+        <%= text_field_tag 'listing[city]', '',
+          'ng-model' => 'fields.city', id: 'city' %>
 
-          <%= label_tag :make, t(:make) %>
-          <%= text_field_tag 'listing[make]', '', id: 'make' %>
+        <%= label_tag :state, t(:state) %>
+        <%= text_field_tag 'listing[state]', '',
+          "ng-model" => 'fields.state', id: 'state' %>
 
-          <%= label_tag :model, t(:model) %>
-          <%= text_field_tag 'listing[model]', '', id: 'model' %>
-        </div>
-        <div class="medium-4 columns">
-          <%= label_tag :year, t(:year) %>
-          <%= text_field_tag 'listing[year]', '', id: 'year' %>
+        <%= label_tag :zipcode, t(:zipcode) %>
+        <%= text_field_tag 'listing[zipcode]', '',
+          "ng-model" => 'fields.zipcode', id: 'zipcode' %>
 
-          <%= label_tag :mileage, t(:mileage) %>
-          <%= text_field_tag 'listing[mileage]', '', id: 'mileage' %>
+        <%= label_tag :country, t(:country) %>
+        <%= text_field_tag 'listing[country]', '',
+          "ng-model" => 'fields.country', id: 'country' %>
 
-          <%= label_tag :stock_type, t(:stock_type) %>
-          <%= text_field_tag 'listing[stock_type]', '', id: 'stock_type' %>
-        </div>
-        <div class="medium-4 columns">
-          <%= label_tag :fuel_type, t(:fuel_type) %>
-          <%= text_field_tag 'listing[fuel_type]', '', id: 'fuel_type' %>
-
-          <%= label_tag :exterior_color, t(:exterior_color) %>
-          <%= text_field_tag 'listing[exterior_color]', '', id: 'exterior_color' %>
-
-          <%= label_tag :interior_color, t(:interior_color) %>
-          <%= text_field_tag 'listing[interior_color]', '', id: 'interior_color' %>
-        </div>
-        <div class="medium-12 columns">
-          <%= link_to t(:save_and_continue), '#',
-            id: 'save-contact-details', class: 'button' %>
-        </div>
+        <%= label_tag :phone, t(:phone) %>
+        <%= text_field_tag 'listing[phone]', '',
+          "ng-model" => 'fields.phone', id: 'phone' %>
       </div>
-
-      <div class="row tabs-panel" id="step3">
-        <div class="medium-6 columns">
-          <%= label_tag :description, t(:description) %>
-          <%= text_area 'listing[description]', '', id: 'description' %>
-        </div>
-      </div>
-
-      <div class="row tabs-panel" id="step4">
-        <div class="medium-3 columns">
-          <%= label_tag :add_image, t(:add_image) %>
-          <%= file_field_tag 'listing[images][]' %>
-        </div>
-
-        <div class="medium-3 columns">
-          <%= label_tag :add_image, t(:add_image) %>
-          <%= file_field_tag 'listing[images][]' %>
-        </div>
-
-        <div class="medium-3 columns">
-          <%= label_tag :add_image, t(:add_image) %>
-          <%= file_field_tag 'listing[images][]' %>
-        </div>
-
-        <div class="medium-3 columns">
-          <%= label_tag :add_image, t(:add_image) %>
-          <%= file_field_tag 'listing[images][]' %>
-        </div>
-      </div>
-
-      <div class="row tabs-panel" id="step5">
+      <div class="medium-12 columns">
+        <%= link_to t(:next), '#', class: 'button',
+          "ng-click" => 'nextStep($event)' %>
       </div>
     </div>
-  <% end %>
+
+    <div class="row tabs-panel step" id="step2">
+      <div class="medium-4 columns">
+        <%= label_tag :vin_number, t(:vin_number) %>
+        <%= text_field_tag 'listing[vin_number]', '', id: 'vin_number' %>
+
+        <%= label_tag :make, t(:make) %>
+        <%= text_field_tag 'listing[make]', '', id: 'make' %>
+
+        <%= label_tag :model, t(:model) %>
+        <%= text_field_tag 'listing[model]', '', id: 'model' %>
+      </div>
+      <div class="medium-4 columns">
+        <%= label_tag :year, t(:year) %>
+        <%= text_field_tag 'listing[year]', '', id: 'year' %>
+
+        <%= label_tag :mileage, t(:mileage) %>
+        <%= text_field_tag 'listing[mileage]', '', id: 'mileage' %>
+
+        <%= label_tag :stock_type, t(:stock_type) %>
+        <%= text_field_tag 'listing[stock_type]', '', id: 'stock_type' %>
+      </div>
+      <div class="medium-4 columns">
+        <%= label_tag :fuel_type, t(:fuel_type) %>
+        <%= text_field_tag 'listing[fuel_type]', '', id: 'fuel_type' %>
+
+        <%= label_tag :exterior_color, t(:exterior_color) %>
+        <%= text_field_tag 'listing[exterior_color]', '', id: 'exterior_color' %>
+
+        <%= label_tag :interior_color, t(:interior_color) %>
+        <%= text_field_tag 'listing[interior_color]', '', id: 'interior_color' %>
+      </div>
+      <div class="medium-12 columns">
+        <%= link_to t(:back), '#', class: 'button',
+          "ng-click" => 'prevStep($event)' %>
+
+        <%= link_to t(:next), '#', class: 'button',
+          "ng-click" => 'nextStep($event)' %>
+      </div>
+    </div>
+
+    <div class="row tabs-panel step" id="step3">
+      <div class="medium-6 columns">
+        <%= label_tag :description, t(:description) %>
+        <%= text_area 'listing[description]', '', id: 'description' %>
+      </div>
+      <div class="medium-12 columns">
+        <%= link_to t(:back), '#', class: 'button',
+          "ng-click" => 'prevStep($event)' %>
+
+        <%= link_to t(:next), '#', class: 'button',
+          "ng-click" => 'nextStep($event)' %>
+      </div>
+      </div>
+    </div>
+
+    <div class="row tabs-panel step" id="step4">
+      <div class="medium-3 columns">
+        <%= label_tag :add_image, t(:add_image) %>
+        <%= file_field_tag 'listing[images][]' %>
+      </div>
+
+      <div class="medium-3 columns">
+        <%= label_tag :add_image, t(:add_image) %>
+        <%= file_field_tag 'listing[images][]' %>
+      </div>
+
+      <div class="medium-3 columns">
+        <%= label_tag :add_image, t(:add_image) %>
+        <%= file_field_tag 'listing[images][]' %>
+      </div>
+
+      <div class="medium-3 columns">
+        <%= label_tag :add_image, t(:add_image) %>
+        <%= file_field_tag 'listing[images][]' %>
+      </div>
+
+      <div class="medium-12 columns">
+        <%= link_to t(:back), '#', class: 'button',
+          "ng-click" => 'prevStep($event)' %>
+
+        <%= link_to t(:next), '#', class: 'button',
+          "ng-click" => 'nextStep($event)' %>
+      </div>
+      </div>
+    </div>
+
+    <div class="row tabs-panel step" id="step5">
+      <%= link_to t(:back), '#', class: 'button',
+        "ng-click" => 'prevStep($event)' %>
+
+      <%= link_to t(:submit_listing), '#', class: 'button',
+        "ng-click" => 'saveListing($event)' %>
+    </div>
+    </div>
   </div>
+  <% end %>
 </section>

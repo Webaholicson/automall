@@ -2,23 +2,23 @@
   <div class="small-6 small-offset-3 columns">
     <ul class="menu">
       <li>
-        <%= link_to t(:buy), { controller: 'account', action: 'login' } %>
+        <%= link_to t(:buy),
+          { controller: 'listing', action: 'list' } %>
         <span>&bull;</span>
       </li>
       <li>
-        <%= link_to t(:sell_and_trade), { controller: 'account', action: 'login' } %>
+        <%= link_to t(:sell_and_trade),
+          { controller: 'listing', action: 'new' } %>
         <span>&bull;</span>
       </li>
       <li>
-        <%= link_to t(:service_and_repair), { controller: 'account', action: 'login' } %>
+        <%= link_to t(:service_and_repair),
+          { controller: 'service', action: 'new' } %>
         <span>&bull;</span>
       </li>
       <li>
-        <%= link_to t(:login), { controller: 'account', action: 'login' } %>
-        <span>&bull;</span>
-      </li>
-      <li>
-        <%= link_to t(:my_account), { controller: 'account', action: 'login' } %>
+        <%= link_to t(:my_account),
+          { controller: 'account', action: 'login' } %>
       </li>
     </ul>
   </div>

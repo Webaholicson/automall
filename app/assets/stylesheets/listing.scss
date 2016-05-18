@@ -2,4 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$listing-subheader-color: #CC4340;
+$listing-subheader-margin-bottom: 1rem;
+
 #vehicle-search-form .search-btn { margin-top: 1.7em; }
+
+#sell-your-car {
+  padding: 1.5em;
+  border: 1px solid #E2D7D7;
+  border-radius: 5px;
+  box-shadow: inset 0 0 75px 0 #EAEAEA;
+}
+
+#sell-your-car .subheader {
+  color: $listing-subheader-color;
+  margin-bottom: $listing-subheader-margin-bottom;
+}

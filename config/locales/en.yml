@@ -95,9 +95,22 @@ en:
   search_btn: 'Search'
   no_listings_found: 'There were no results matching your search criteria.'
   save_and_continue: 'Save and Continue'
+  contact_details: 'Contact Details'
+  vehicle_details: 'Vehicle Details'
+  additional_details: 'Additional Details'
+  vehicle_images: 'Vehicle Images'
+  review_listing: 'Review Listing'
+  save_listing: 'Save Listing'
+  submit_listing: 'Submit Listing'
+  next: 'Next'
+  back: 'Back'
 
   # Pages
   page_not_found: 'Ooops... The page you are looking for
     could not be found.'
   not_found_404: '404 Not Found'
   go_back_home: 'Go to the home page.'
+
+  #Form validation
+  required_fields: 'Required fields'
+  field_is_required: 'This field is required.'
