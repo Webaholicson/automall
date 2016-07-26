@@ -1,0 +1,50 @@
+<div class="widget">
+  <div class="row inside">
+    <div class="small-10 columns">
+      <%= content_tag :h4, t(:attributes) %>
+    </div>
+    <div class="small-2 columns">
+      <ul class="menu">
+        <li><%= content_tag :a, t(:new_attribute), class: 'primary button',
+          href: url_for(controller: 'attributes', action: 'new') %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="widget">
+  <div class="row inside">
+    <div class="small-12 columns">
+      <table class="hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Entity</th>
+            <th>Set</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>amendes</td>
+            <td>Honda</td>
+            <td>Accord</td>
+            <td>2014</td>
+            <td>$15,000.00</td>
+            <td>$15,000.00</td>
+          </tr>
+          <tr>
+            <td>amendes</td>
+            <td>Toyota</td>
+            <td>Camry</td>
+            <td>2016</td>
+            <td>$20,000.00</td>
+            <td>$20,000.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

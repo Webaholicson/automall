@@ -1,7 +1,8 @@
-<section class="row">
+<section class="row widget">
   <%= @current_user %>
-  <div class="medium-6" id="admin-login-container">
-    <h5><%= t :login_to_admin %></h5>
+  <div class="medium-6 inside" id="admin-login-container">
+    <%= content_tag :h4, t(:login_to_admin) %>
+    <%= content_tag :hr %>
     <%= form_tag({controller: 'admin/index', action: 'login_post'},
       id: 'admin-login-form', method: "post") do %>
       <div class="input-text">

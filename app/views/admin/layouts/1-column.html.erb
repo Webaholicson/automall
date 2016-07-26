@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <%= render 'admin/partial/head' %>
-  <body class="<%= @body_class %>">
+  <body class="admin <%= @body_class %>">
     <% if is_user_logged_in? %>
     <header id="main-header">
       <%= render 'admin/partial/header' %>
@@ -16,11 +16,9 @@
       <%= render 'admin/partial/messages' %>
     </section>
 
-    <main id="main-content">
-      <div class="perimiter">
-        <%= yield %>
-      </div>
-    </main>
+    <section id="main-content">
+      <%= yield %>
+    </section>
 
     <footer id="main-footer">
       <%= render 'admin/partial/footer' %>

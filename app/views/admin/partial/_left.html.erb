@@ -1,0 +1,45 @@
+
+<ul class="menu vertical">
+  <li>
+    <a href="<%= url_for controller: 'index', action: 'dashboard' %>">
+      <%= image_tag("calendar.png") %>
+      <%= content_tag :span, t(:dashboard) %>
+    </a>
+  </li>
+  <li>
+    <a href="<%= url_for controller: 'users', action: 'index' %>">
+      <%= image_tag("user.png") %>
+      <%= content_tag :span, t(:users) %>
+    </a>
+  </li>
+  <li>
+    <a href="<%= url_for controller: 'listings', action: 'index' %>">
+      <%= image_tag("list.png") %>
+      <%= content_tag :span, t(:listings) %>
+    </a>
+  </li>
+  <li>
+    <a href="<%= url_for controller: 'services', action: 'index' %>">
+      <%= image_tag("truck.png") %>
+      <%= content_tag :span, t(:service) %>
+    </a>
+  </li>
+  <li>
+    <a href="<%= url_for controller: 'attributes', action: 'index' %>">
+      <%= image_tag("list-1.png") %>
+      <%= content_tag :span, t(:attributes) %>
+    </a>
+  </li>
+  <li>
+    <a href="<%= url_for controller: 'settings', action: 'index' %>">
+      <%= image_tag("repair-tools.png") %>
+      <%= content_tag :span, t(:settings) %>
+    </a>
+  </li>
+  <li>
+    <a href="<%= url_for controller: 'index', action: 'logout' %>">
+      <%= image_tag("padlock.png") %>
+      <%= content_tag :span, t(:logout) %>
+    </a>
+  </li>
+</ul>

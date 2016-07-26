@@ -18,5 +18,4 @@
 
 /* Global Styles */
 body { font-family: 'Droid Sans', sans-serif; }
-
-.perimiter { width: 980px; margin: 0 auto; }
+body.admin { background-color: #e5e5e5; }
