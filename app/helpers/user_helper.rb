@@ -8,6 +8,10 @@ module UserHelper
   end
 
   def is_user_logged_in?
+    if is_admin?
+      return !session[:admin]['current_user_id'].nil?
+    end
+
     !session[:current_user_id].nil? or !cookies.signed[:remember_me].nil?
   end
 

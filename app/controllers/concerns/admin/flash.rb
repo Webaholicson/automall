@@ -26,10 +26,11 @@ module Admin
     end
 
     def setup_admin_flash
-      if request.post? and flash[:admin].nil?
+      if (request.post? or request.get?) and flash[:admin].nil?
         flash[:admin] = Hash.new
         flash[:admin]['messages'] = Hash.new
       end
+      flash[:admin]
     end
 
     private

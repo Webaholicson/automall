@@ -32,13 +32,13 @@ Rails.application.routes.draw do
   post 'account/register_post'
 
   namespace :admin do
-    resources :listing, :admin_user
+    resources :listings, :users, :services, :admin_user, :settings, :attributes
   end
 
   match ':controller(/:action(/:id))', controller: /admin\/[^\/]+/, action: /[^\/]+_post/, via: [:post]
   match ':controller(/:action(/:id))', controller: /admin\/[^\/]+/, via: [:get]
   get '/admin', to: 'admin/index#dashboard'
-  get '/admin/:page', to: 'admin/index#dashboard'
+  #get '/admin/:page', to: 'admin/index#dashboard'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

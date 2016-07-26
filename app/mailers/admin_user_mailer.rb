@@ -13,7 +13,7 @@ class AdminUserMailer < ApplicationMailer
       only_path: false, approval_code: approval_code)
 
     mail(to: email, subject: 'Reset you password') do |format|
-      format.html { render 'admin/user_mailer' }
+      format.html { render 'admin/user_mailer/reset_password' }
     end
   end
 end

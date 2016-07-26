@@ -1,19 +1,19 @@
 module Admin
   class IndexController < AdminController
-    include SessionHelper
-    include UserHelper
 
-    layout '/admin/layouts/1-column'
+    skip_before_action :is_logged_in?, only: [
+      :logout,
+      :login,
+      :login_post,
+      :forgot_password,
+      :forgot_password_post,
+      :change_password,
+      :change_password_post
+    ]
 
     def dashboard
       if !is_user_logged_in?
         redirect_to action: 'login' and return
-      end
-    end
-
-    def login
-      if is_user_logged_in?
-      redirect_to action: 'dashboard' and return
       end
     end
 
@@ -38,7 +38,7 @@ module Admin
 
     def forgot_password_post
       begin
-        if params[:email]
+        if !params[:email].empty?
           approval_code = generate_approval_code
           user = AdminUser.find_by(email: params[:email])
           if user
@@ -49,9 +49,9 @@ module Admin
           AdminUserMailer.reset_password(params[:email], approval_code).deliver_later
           set_flash_message 'success', I18n.t(:password_reset_email_sent)
           redirect_to action: 'login' and return
-        else
-          raise I18n.t :invalid_email
         end
+
+        raise I18n.t :invalid_email
       rescue Exception => e
         set_flash_message 'alert', e.message
       end

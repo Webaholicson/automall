@@ -114,3 +114,14 @@ en:
   #Form validation
   required_fields: 'Required fields'
   field_is_required: 'This field is required.'
+
+  # Admin Pages
+  dashboard: 'Dashboard'
+  new_listings: 'New Listings'
+  new_users: 'New Users'
+  new_service_locations: 'New Service Locations'
+  settings: 'Settings'
+  users: 'Users'
+  listings: 'Listings'
+  service: 'Service'
+  attributes: 'Attributes'
